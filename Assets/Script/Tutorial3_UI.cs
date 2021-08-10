@@ -16,7 +16,7 @@ public class Tutorial3_UI : MonoBehaviour
 
     void Update()
     {
-        if (this.character.transform.position.x >= -1)
+        if (this.character.transform.position.x >= -10.9f && this.character.transform.position.x <= -5.1f)
         {
             this.RopeTutorial.SetActive(true);
         }

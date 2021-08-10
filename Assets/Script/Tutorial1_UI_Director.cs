@@ -20,13 +20,20 @@ public class Tutorial1_UI_Director : MonoBehaviour
     {
         if (character.transform.position.x >= 0)
         {
-             MoveTutorial.SetActive(false);
-            PortalTutorial.SetActive(true);
+            this.MoveTutorial.SetActive(false);
         }
         else
         {
-            MoveTutorial.SetActive(true);
-            PortalTutorial.SetActive(false);
+            this.MoveTutorial.SetActive(true);
+        }
+
+        if (character.transform.position.x <= 5.0f)
+        {
+            this.PortalTutorial.SetActive(false);
+        }
+        else
+        {
+            this.PortalTutorial.SetActive(true);
         }
     }
 }

@@ -16,7 +16,7 @@ public class Tutorial2_UI : MonoBehaviour
 
     void Update()
     {
-        if (character.transform.position.x >= 0)
+        if (character.transform.position.x >= 0 && character.transform.position.x <= 9.0f)
         {
             JumpTutorial.SetActive(true);
         }

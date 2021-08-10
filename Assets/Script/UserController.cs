@@ -104,16 +104,16 @@ public class UserController : MonoBehaviour
         }
 
         // 캐릭터가 맵 밖으로 나가지 못하게 함
-        if (transform.position.x <= -8.42f)
+        if (transform.position.x <= -17.47f)
         {
             transform.position = new Vector3(
-                -8.42f, transform.position.y, 0
+                -17.47f, transform.position.y, 0
             );
         }
-        else if (transform.position.x >= 8.42f)
+        else if (transform.position.x >= 17.47f)
         {
             transform.position = new Vector3(
-                8.42f, transform.position.y, 0
+                17.47f, transform.position.y, 0
             );
         }
     }
