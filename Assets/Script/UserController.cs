@@ -5,20 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class UserController : MonoBehaviour
 {
+    public int Hp = 200;  // 캐릭터 Hp
+    public int Mp = 200;  // 캐릭터 Mp
+    public int Level = 1;  // 캐릭터 레벨
     Animator animator;  // 애니메이터
     Rigidbody2D rigid2D;  // 물리엔진
     float jumpForce = 520.0f;  // 점프력
     float walkForce = 35.0f;  // 이동속도
-    float maxWalkSpeed = 2.0f;  // 최대속도
+    float maxWalkSpeed = 3.0f;  // 최대속도
     Scene current_Scene;  // 현재 씬(맵)
     float ropeSpeed = 0.1f;  // 로프 올라가는 속도
-    public bool ropeClimbing = false;
+    public bool ropeClimbing = false;  // 로프를 사용 중인지 여부
+    float charlength = 0.53f;  // 캐릭터 대략적인 크기
+    float groundlength;  // 맵 크기
 
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();  // 물리 엔진
         this.animator = GetComponent<Animator>();  // 애니메이터
         this.current_Scene = SceneManager.GetActiveScene();  // 현재 씬(맵)
+        int current_Scene_number = current_Scene.buildIndex;
+        if (current_Scene_number >= 0)
+        {
+            this.groundlength = 18.0f;
+        }
     }
 
     // 포탈 / 로프
@@ -30,8 +40,7 @@ public class UserController : MonoBehaviour
             SceneManager.LoadScene(current_Scene.buildIndex + 1);
         }
         // 로프
-        else if (other.gameObject.tag == "Rope") // && (Input.GetKeyDown(KeyCode.UpArrow)
-        // || Input.GetKeyDown(KeyCode.DownArrow)))
+        else if (other.gameObject.tag == "Rope")
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -104,17 +113,15 @@ public class UserController : MonoBehaviour
         }
 
         // 캐릭터가 맵 밖으로 나가지 못하게 함
-        if (transform.position.x <= -17.47f)
+        if (transform.position.x <= (-groundlength + charlength))
         {
             transform.position = new Vector3(
-                -17.47f, transform.position.y, 0
-            );
+                -groundlength + charlength, transform.position.y, 0);
         }
-        else if (transform.position.x >= 17.47f)
+        else if (transform.position.x >= (groundlength - charlength))
         {
             transform.position = new Vector3(
-                17.47f, transform.position.y, 0
-            );
+                groundlength - charlength, transform.position.y, 0);
         }
     }
 }

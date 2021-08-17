@@ -7,6 +7,9 @@ TagManager:
   - Right_Portal
   - Left_Portal
   - Rope
+  - Character
+  - Monster
+  - Weapon
   layers:
   - Default
   - TransparentFX
