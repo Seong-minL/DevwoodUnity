@@ -416,6 +416,10 @@ MonoBehaviour:
   Hp: 200
   Mp: 200
   Level: 1
+  STR: 5
+  DEX: 5
+  INT: 5
+  Job: "\uCD08\uBCF4\uC790"
   ropeClimbing: 0
 --- !u!95 &260139701
 Animator:
@@ -646,7 +650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -230, y: 90}
+  m_AnchoredPosition: {x: -300, y: 90}
   m_SizeDelta: {x: 260, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740874689
@@ -935,7 +939,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928348554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: -2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
@@ -973,6 +977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07953d0f49aac4e4f855aae0e450c31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Attack: 10
+  Defense: 0
 --- !u!58 &928348559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7908,7 +7914,7 @@ GameObject:
   - component: {fileID: 2095770267}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Weapon
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7946,8 +7952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4367601e248164b8dc989eb9d74b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  current_angle: -50
+  Weapon_Type: 
+  isAttack: 0
 --- !u!212 &2095770265
 SpriteRenderer:
   m_ObjectHideFlags: 0

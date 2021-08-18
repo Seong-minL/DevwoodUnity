@@ -17,6 +17,7 @@ public class Common_UI : MonoBehaviour
     int Remaining_Mp;
     int character_Lv;
 
+    // 대미지를 입으면 Hp를 감소시키는 함수
     public void DecreaseHp(int Damage)
     {
         this.Remaining_Hp -= Damage;
@@ -33,6 +34,7 @@ public class Common_UI : MonoBehaviour
         }
     }
 
+    // 마나를 소모하면 Mp를 감소시키는 함수
     public void DecreaseMp(int Cost)
     {
         this.Remaining_Mp -= Cost;
@@ -66,18 +68,6 @@ public class Common_UI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            int Damage = Random.Range(1, 26);
-            DecreaseHp(Damage);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            int Cost = Random.Range(1, 26);
-            DecreaseMp(Cost);
-        }
-
         this.Hp_Amount_UI.GetComponent<Text>().text = Remaining_Hp.ToString() + " / " + character_Hp.ToString();
         this.Mp_Amount_UI.GetComponent<Text>().text = Remaining_Mp.ToString() + " / " + character_Mp.ToString();
         this.character_Lv_UI.GetComponent<Text>().text = "Lv. " + character_Lv.ToString();

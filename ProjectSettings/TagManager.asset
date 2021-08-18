@@ -9,7 +9,9 @@ TagManager:
   - Rope
   - Character
   - Monster
-  - Weapon
+  - Sword
+  - Bow
+  - Staff
   layers:
   - Default
   - TransparentFX

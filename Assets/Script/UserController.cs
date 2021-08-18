@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class UserController : MonoBehaviour
 {
+    // 유저 스탯
     public int Hp = 200;  // 캐릭터 Hp
     public int Mp = 200;  // 캐릭터 Mp
     public int Level = 1;  // 캐릭터 레벨
+    public int STR = 5;  // 캐릭터 힘 스탯
+    public int DEX = 5;  // 캐릭터 민첩 스탯
+    public int INT = 5;  // 캐릭터 지능 스탯
+    public string Job = "초보자";  // 캐릭터 직업
+
+
+    // 캐릭터 제어 관련 변수
     Animator animator;  // 애니메이터
     Rigidbody2D rigid2D;  // 물리엔진
     float jumpForce = 520.0f;  // 점프력
